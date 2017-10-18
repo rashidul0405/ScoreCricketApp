@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { StyleSheet, View, TabBarIOS } from 'react-native'
+import PropTypes from 'prop-types'
 
 import { switchTab } from './actions'
 
@@ -12,8 +13,13 @@ import Home from './Home'
 
 class App extends Component{
 
+    static propTypes = {
+        tab: PropTypes.string.isRequired,
+        onTabSelect: PropTypes.func.isRequired
+    }
+
     render() {
-        const { tab } = this.props
+        const { tab, onTabSelect } = this.props
 
         return (
             <View style={styles.container}>
@@ -21,7 +27,7 @@ class App extends Component{
                     <TabBarIOS.Item
                         // icon="home"
                         selected={tab === 'home'}
-                        onPress={() => this.props.onTabSelect('home')}
+                        onPress={() => onTabSelect('home')}
                         title="Home">
                         <Home/>
                     </TabBarIOS.Item>
@@ -29,7 +35,7 @@ class App extends Component{
                     <TabBarIOS.Item
                         // icon="matches"
                         selected={tab === 'matches'}
-                        onPress={() => this.props.onTabSelect('matches')}
+                        onPress={() => onTabSelect('matches')}
                         title="Matches">
                         <Matches/>
                     </TabBarIOS.Item>
@@ -37,7 +43,7 @@ class App extends Component{
                     <TabBarIOS.Item
                         // icon="teams"
                         selected={tab === 'teams'}
-                        onPress={() => this.props.onTabSelect('teams')}
+                        onPress={() => onTabSelect('teams')}
                         title="Teams">
                         <Teams/>
                     </TabBarIOS.Item>
