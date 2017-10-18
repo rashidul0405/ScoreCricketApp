@@ -3,6 +3,9 @@ import { StyleSheet, View, TabBarIOS } from 'react-native'
 
 // import logo from './logo.svg'
 // import './App.css'
+import Teams from './Teams'
+import Matches from './Matches'
+import Home from './Home'
 
 class App extends Component{
 
@@ -14,19 +17,20 @@ class App extends Component{
                         // icon="home"
                         // selected={true}
                         title="Home">
-                        Home
+                        <Home/>
                     </TabBarIOS.Item>
 
                     <TabBarIOS.Item
                         // icon="matches"
                         title="Matches">
-                        Matches
+                        <Matches/>
                     </TabBarIOS.Item>
 
                     <TabBarIOS.Item
                         // icon="teams"
+                        selected={true}
                         title="Teams">
-                        Teams
+                        <Teams/>
                     </TabBarIOS.Item>
                 </TabBarIOS>
             </View>
