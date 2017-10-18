@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux'
 import {createLogger} from 'redux-logger'
+import initialState from './stateTree'
 
 import reducer from './rootReducer'
 
@@ -13,6 +14,7 @@ if( process.env.NODE_ENV !== 'production' ){
 
 const configureStore = createStore(
     reducer,
+    initialState,
     composeEnhancers(
         applyMiddleware( ...middleware)
     )
