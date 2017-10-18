@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View,  Text } from 'react-native'
+import { StyleSheet, View, TabBarIOS } from 'react-native'
 
 // import logo from './logo.svg'
 // import './App.css'
@@ -9,7 +9,26 @@ class App extends Component{
     render() {
         return (
             <View style={styles.container}>
-                <Text>Hey Legend</Text>
+                <TabBarIOS>
+                    <TabBarIOS.Item
+                        // icon="home"
+                        // selected={true}
+                        title="Home">
+                        Home
+                    </TabBarIOS.Item>
+
+                    <TabBarIOS.Item
+                        // icon="matches"
+                        title="Matches">
+                        Matches
+                    </TabBarIOS.Item>
+
+                    <TabBarIOS.Item
+                        // icon="teams"
+                        title="Teams">
+                        Teams
+                    </TabBarIOS.Item>
+                </TabBarIOS>
             </View>
         )
     }
