@@ -18,8 +18,14 @@ class App extends Component{
         onTabSelect: PropTypes.func.isRequired
     }
 
+    onTabSelect = (tab) => {
+        if (this.props.tab !== tab) {
+            this.props.onTabSelect(tab)
+        }
+    }
+
     render() {
-        const { tab, onTabSelect } = this.props
+        const { tab } = this.props
 
         return (
             <View style={styles.container}>
@@ -27,7 +33,7 @@ class App extends Component{
                     <TabBarIOS.Item
                         // icon="home"
                         selected={tab === 'home'}
-                        onPress={() => onTabSelect('home')}
+                        onPress={() => this.onTabSelect('home')}
                         title="Home">
                         <Home/>
                     </TabBarIOS.Item>
@@ -35,7 +41,7 @@ class App extends Component{
                     <TabBarIOS.Item
                         // icon="matches"
                         selected={tab === 'matches'}
-                        onPress={() => onTabSelect('matches')}
+                        onPress={() => this.onTabSelect('matches')}
                         title="Matches">
                         <Matches/>
                     </TabBarIOS.Item>
@@ -43,7 +49,7 @@ class App extends Component{
                     <TabBarIOS.Item
                         // icon="teams"
                         selected={tab === 'teams'}
-                        onPress={() => onTabSelect('teams')}
+                        onPress={() => this.onTabSelect('teams')}
                         title="Teams">
                         <Teams/>
                     </TabBarIOS.Item>
