@@ -1,6 +1,9 @@
 import React, {Component} from 'react'
-import {Text} from 'react-native'
+import { FlatList, Text, StyleSheet } from 'react-native'
+import { StackNavigator } from 'react-navigation'
 import Icons from 'react-native-vector-icons/Ionicons'
+
+import TeamList from './TeamList'
 
 class Teams extends Component {
 
@@ -18,12 +21,20 @@ class Teams extends Component {
     }
 
     render() {
+        const Nav = StackNavigator({
+            List: {
+                screen: TeamList,
+                navigationOptions: {
+                    title: 'Teams List'
+                }
+            }
+        })
         return (
-            <Text>
-                Teams
-            </Text>
+            <Nav/>
         )
     }
 }
+
+
 
 export default Teams

@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
 
+import teams from './reducers/teams'
+
 const rootReducer = combineReducers({
-    teams: () => ({}),
     matches: () => ({}),
+    teams,
 })
 
 export default rootReducer

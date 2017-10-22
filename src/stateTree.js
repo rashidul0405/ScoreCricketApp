@@ -6,7 +6,10 @@
 
 
 const stateTree = {
-
+    teams: [
+        'Cefalo',
+        'Tiget IT'
+    ]
 }
 
 export default stateTree

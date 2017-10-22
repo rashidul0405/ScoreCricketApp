@@ -11,17 +11,24 @@ import Home from './Home'
 
 const App = () => {
 
-    const MainNav = TabNavigator({
-        Home: {
-            screen: Home,
+    const MainNav = TabNavigator(
+        {
+            Home: {
+                screen: Home,
+            },
+            Matches: {
+                screen: Matches,
+            },
+            Teams: {
+                screen: Teams,
+            }
         },
-        Matches: {
-            screen: Matches,
-        },
-        Teams: {
-            screen: Teams,
+        {
+            tabBarPosition: 'bottom',
+            animationEnabled: false,
+            swipeEnabled: false,
         }
-    })
+    )
 
     return (
         <View style={styles.container}>
