@@ -6,9 +6,7 @@
 
 
 const stateTree = {
-    navigation: {
-        tab: 'teams'
-    }
+
 }
 
 export default stateTree
